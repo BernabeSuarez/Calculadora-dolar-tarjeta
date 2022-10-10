@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgb(62, 186, 166);
+  background: radial-gradient(
+    circle,
+    rgba(62, 186, 166, 1) 0%,
+    rgba(25, 97, 168, 1) 100%
+  );
+}

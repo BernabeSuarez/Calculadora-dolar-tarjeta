@@ -126,7 +126,8 @@ const IconDollar = styled(HiOutlineCurrencyDollar)`
   }
 `;
 
-const dolar = "https://www.dolarsi.com/api/api.php?type=valoresprincipales"; //API del dolar del Dia
+export const dolar =
+  "https://www.dolarsi.com/api/api.php?type=valoresprincipales"; //API del dolar del Dia
 let dolarOficial;
 
 fetch(dolar)
