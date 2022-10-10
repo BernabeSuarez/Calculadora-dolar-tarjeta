@@ -38,15 +38,16 @@ const MenuContainer = styled.div`
 `;
 
 const Menu = () => {
+  const hidden = useSelector((state) => state.menu.hidden);
+
   const dispatch = useDispatch();
   const handdlerToggle = () => {
     dispatch(menuActions.toggleMenuHidden());
   };
-  const hidden = useSelector((state) => state.menu.hidden);
 
   return (
-    <MenuBackground show={hidden}>
-      <MenuContainer show={hidden}>
+    <MenuBackground show={!hidden}>
+      <MenuContainer show={!hidden}>
         <Link to={`/`} onClick={handdlerToggle}>
           <h2>HOME</h2>
         </Link>
