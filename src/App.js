@@ -3,13 +3,12 @@ import {
   createBrowserRouter,
   RouterProvider,
   createRoutesFromElements,
-  Route
+  Route,
 } from "react-router-dom";
 import Main from './components/Main';
 import Convert from './components/Convert';
 import Home from './components/Home'
 import RootLayout from './components/RootLayout';
-
 
 
 const router = createBrowserRouter(

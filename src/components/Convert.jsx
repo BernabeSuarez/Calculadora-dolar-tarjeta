@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { dolar } from "./Main";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const ConvertContainer = styled.div`
   width: 70%;
@@ -91,15 +92,12 @@ const ButtonContainer = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
 `;
-let dolarOficial;
 
-fetch(dolar)
-  .then((response) => response.json())
-  .then((dolar) => {
-    dolarOficial = dolar[0].casa.venta;
-    dolarOficial = dolarOficial.replace(/,/, ".");
-  });
 const Convert = () => {
+  const dolarHoy = useSelector((state) => state.dolar.dolares[0][0].casa.venta);
+  let dolarOficial = dolarHoy;
+  dolarOficial = dolarOficial.replace(/,/, ".");
+
   const [calc, setCalc] = useState("");
   const [convert, setConvert] = useState(0);
   const [moneda, setMoneda] = useState(true);

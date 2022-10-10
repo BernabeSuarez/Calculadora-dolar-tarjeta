@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { GiMoneyStack, GiBroom } from "react-icons/gi";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { useSelector } from "react-redux";
 
 const MainContainer = styled.div`
   width: 70%;
@@ -128,16 +129,12 @@ const IconDollar = styled(HiOutlineCurrencyDollar)`
 
 export const dolar =
   "https://www.dolarsi.com/api/api.php?type=valoresprincipales"; //API del dolar del Dia
-let dolarOficial;
-
-fetch(dolar)
-  .then((response) => response.json())
-  .then((dolar) => {
-    dolarOficial = dolar[0].casa.venta;
-    dolarOficial = dolarOficial.replace(/,/, ".");
-  });
 
 const Main = () => {
+  const dolarHoy = useSelector((state) => state.dolar.dolares[0][0].casa.venta);
+  let dolarOficial = dolarHoy;
+  dolarOficial = dolarOficial.replace(/,/, ".");
+
   const [calc, setCalc] = useState("");
   const [op, setOp] = useState(null);
   const [final, setFinal] = useState(0);

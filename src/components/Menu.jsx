@@ -13,9 +13,6 @@ const MenuBackground = styled.div`
   transition-property: opacity;
   transition-duration: 0.8s;
   backdrop-filter: blur(5px);
-  @media (max-width: 768px) {
-    display: none;
-  }
 `;
 const MenuContainer = styled.div`
   position: fixed;
