@@ -163,7 +163,7 @@ const Convert = () => {
             onChange={(e) => setCalc(e.target.value)}
             value={calc}
           />
-          <H2>Pesos: {convert.toFixed(2)}</H2>
+          <H2>Pesos: $ {convert.toFixed(2)}</H2>
           <ButtonMain onClick={convertirUsd}>Convertir</ButtonMain>
         </>
       ) : (
@@ -173,7 +173,7 @@ const Convert = () => {
             onChange={(e) => setCalc(e.target.value)}
             value={calc}
           />
-          <H2>Dolares: {convert.toFixed(2)}</H2>
+          <H2>Dolares: $ {convert.toFixed(2)}</H2>
           <ButtonMain onClick={convertirArs}>Convertir</ButtonMain>
         </>
       )}
