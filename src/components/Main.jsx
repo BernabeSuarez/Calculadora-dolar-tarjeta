@@ -52,6 +52,7 @@ const InputContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   margin-bottom: 20px;
   @media (max-width: 768px) {
@@ -72,7 +73,7 @@ const InputMoney = styled.div`
 
 const Input = styled.input`
   width: 95%;
-  height: 2rem;
+  height: 3rem;
   padding-left: 1%;
   font-size: 1.8rem;
   margin-right: 2rem;
@@ -89,7 +90,7 @@ const Input = styled.input`
 `;
 const Button = styled.button`
   width: 10rem;
-  height: 2rem;
+  height: 3rem;
   background-color: #206a83;
   border: none;
   display: flex;
@@ -104,6 +105,7 @@ const Button = styled.button`
   @media (max-width: 768px) {
     width: 100%;
     margin-bottom: 0.5rem;
+    margin-top: 5%;
   }
 `;
 const IconMoney = styled(GiMoneyStack)`
@@ -183,18 +185,18 @@ const Main = () => {
         <Button onClick={calcular}>
           Calcular <IconMoney />
         </Button>
+        {op && (
+          <>
+            <H3>Valor sin impuestos: $ {convert.toFixed(2)} </H3>
+            <H3>Imp. Pais (30%): $ {imp.toFixed(2)} </H3>
+            <H3>Perc. Gan. (45%): $ {gan.toFixed(2)} </H3>
+            <H3>Total ARS: $ {final.toFixed(2)}</H3>
+            <Button onClick={reset}>
+              Reset <IconBroom />
+            </Button>
+          </>
+        )}
       </InputContainer>
-      {op && (
-        <>
-          <H3>Valor sin impuestos: $ {convert.toFixed(2)} </H3>
-          <H3>Imp. Pais (30%): $ {imp.toFixed(2)} </H3>
-          <H3>Perc. Gan. (45%): $ {gan.toFixed(2)} </H3>
-          <H3>Total ARS: $ {final.toFixed(2)}</H3>
-          <Button onClick={reset}>
-            Reset <IconBroom />
-          </Button>
-        </>
-      )}
     </MainContainer>
   );
 };

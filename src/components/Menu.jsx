@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import * as menuActions from "../redux/menu/menuActions";
+import { BsCalculatorFill, BsFillHouseFill } from "react-icons/bs";
+import { SiConvertio } from "react-icons/si";
+
 const MenuBackground = styled.div`
   position: fixed;
   width: 100%;
@@ -31,10 +34,28 @@ const MenuContainer = styled.div`
   & a {
     text-decoration: none;
     color: black;
+    text-align: center;
   }
   @media (max-width: 768px) {
     width: 100%;
   }
+`;
+
+const HomeIcon = styled(BsFillHouseFill)`
+  width: 45px;
+  height: 45px;
+  color: black;
+`;
+
+const CalcIcon = styled(BsCalculatorFill)`
+  width: 45px;
+  height: 45px;
+  color: black;
+`;
+const ConvIcon = styled(SiConvertio)`
+  width: 45px;
+  height: 45px;
+  color: black;
 `;
 
 const Menu = () => {
@@ -49,12 +70,15 @@ const Menu = () => {
     <MenuBackground show={!hidden}>
       <MenuContainer show={!hidden}>
         <Link to={`/`} onClick={handdlerToggle}>
+          <HomeIcon />
           <h2>HOME</h2>
         </Link>
         <Link to={`convertidor`} onClick={handdlerToggle}>
+          <ConvIcon />
           <h2>CONVERTIDOR</h2>
         </Link>
         <Link to={`calculadora`} onClick={handdlerToggle}>
+          <CalcIcon />
           <h2>CALCULADORA</h2>
         </Link>
       </MenuContainer>

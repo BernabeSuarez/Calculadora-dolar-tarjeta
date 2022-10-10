@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { dolar } from "./Main";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import { IoMdShareAlt } from "react-icons/io";
 
 const ConvertContainer = styled.div`
   width: 70%;
@@ -19,15 +19,7 @@ const ConvertContainer = styled.div`
     width: 90%;
   } ;
 `;
-const H1 = styled.h1`
-  margin-bottom: 3rem;
-  font-size: 3rem;
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 0.4rem;
-  } ;
-`;
+
 const H2 = styled.h2`
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -37,20 +29,10 @@ const H2 = styled.h2`
     margin-bottom: 1rem;
   } ;
 `;
-const H3 = styled.h3`
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 0.1rem;
-    margin-bottom: 0.4rem;
-  } ;
-`;
 
 const Input = styled.input`
   width: 60%;
-  height: 2rem;
+  height: 3rem;
   padding-left: 1%;
   font-size: 1.8rem;
   //margin-right: 2rem;
@@ -67,12 +49,14 @@ const Input = styled.input`
 `;
 const Button = styled.button`
   width: 10rem;
-  height: 2rem;
+  height: 3rem;
+  padding: 2%;
+  margin: auto;
   background-color: #206a83;
   border: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: 10px;
   color: #fafafa;
   text-transform: uppercase;
@@ -80,17 +64,42 @@ const Button = styled.button`
     background-color: #272083;
   }
   @media (max-width: 768px) {
-    width: 100%;
-    margin-bottom: 0.5rem;
+    width: 90%;
+    margin-bottom: 0.9rem;
   }
 `;
 
 const ButtonContainer = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
-  margin-bottom: 5%;
+  margin-top: 5%;
+  margin-bottom: 10%;
   flex-direction: row;
   justify-content: space-evenly;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 25%;
+  }
+`;
+
+const Arrow = styled(IoMdShareAlt)`
+  width: 35px;
+  height: 35px;
+  color: white;
+`;
+const Flag = styled.div`
+  width: 35px;
+  height: 35px;
+
+  & img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+`;
+
+const ButtonMain = styled(Button)`
+  justify-content: center;
 `;
 
 const Convert = () => {
@@ -127,8 +136,24 @@ const Convert = () => {
   return (
     <ConvertContainer>
       <ButtonContainer>
-        <Button onClick={monedaUsd}>USD {">"} ARS</Button>
-        <Button onClick={monedaArs}>ARS {">"} USD</Button>
+        <Button onClick={monedaUsd}>
+          <Flag>
+            <img src="img/Usa.jpg" alt="" />
+          </Flag>
+          <Arrow />
+          <Flag>
+            <img src="img/Arg.jpg" alt="" />
+          </Flag>
+        </Button>
+        <Button onClick={monedaArs}>
+          <Flag>
+            <img src="img/Arg.jpg" alt="" />
+          </Flag>
+          <Arrow />
+          <Flag>
+            <img src="img/Usa.jpg" alt="" />
+          </Flag>
+        </Button>
       </ButtonContainer>
 
       {moneda ? (
@@ -139,7 +164,7 @@ const Convert = () => {
             value={calc}
           />
           <H2>Pesos: {convert.toFixed(2)}</H2>
-          <Button onClick={convertirUsd}>Convertir</Button>
+          <ButtonMain onClick={convertirUsd}>Convertir</ButtonMain>
         </>
       ) : (
         <>
@@ -149,7 +174,7 @@ const Convert = () => {
             value={calc}
           />
           <H2>Dolares: {convert.toFixed(2)}</H2>
-          <Button onClick={convertirArs}>Convertir</Button>
+          <ButtonMain onClick={convertirArs}>Convertir</ButtonMain>
         </>
       )}
     </ConvertContainer>

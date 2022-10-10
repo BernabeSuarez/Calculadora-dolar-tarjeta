@@ -10,7 +10,7 @@ const HomeContainer = styled.div`
   margin: auto;
   padding: 1%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.35);
@@ -26,13 +26,37 @@ const H3 = styled.h3`
   font-weight: 900;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-  text-align: right;
+
   @media (max-width: 768px) {
     font-size: 2rem;
     text-align: center;
     margin-top: 0.1rem;
     margin-bottom: 0.4rem;
   } ;
+`;
+
+const ImgHome = styled.div`
+  width: 50%;
+  height: 60vh;
+  background-color: white;
+  background-image: url("img/HomeBack.jpg");
+  background-size: cover;
+  margin: auto 3% auto auto;
+  border-radius: 20px 0 20px 0;
+  box-shadow: 10px 10px 27px 0px rgba(0, 0, 0, 0.55);
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const DataContainer = styled.div`
+  width: 60%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
 `;
 
 console.log(dolar);
@@ -60,9 +84,13 @@ const Home = () => {
     <HomeContainer>
       {dolarHoy.map((item) => (
         <>
-          <H3>Dolar Oficial: $ {item[0].casa.venta}</H3>
-          <H3>Dolar Blue: $ {item[1].casa.venta}</H3>
-          <H3>Contado con Liqui: $ {item[3].casa.venta}</H3>
+          <DataContainer>
+            <H3>Dolar Oficial: $ {item[0].casa.venta}</H3>
+            <H3>Dolar Blue: $ {item[1].casa.venta}</H3>
+            <H3>Contado con Liqui: $ {item[3].casa.venta}</H3>
+          </DataContainer>
+
+          <ImgHome />
         </>
       ))}
     </HomeContainer>
