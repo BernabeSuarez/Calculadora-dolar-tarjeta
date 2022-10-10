@@ -185,18 +185,18 @@ const Main = () => {
         <Button onClick={calcular}>
           Calcular <IconMoney />
         </Button>
-        {op && (
-          <>
-            <H3>Valor sin impuestos: $ {convert.toFixed(2)} </H3>
-            <H3>Imp. Pais (30%): $ {imp.toFixed(2)} </H3>
-            <H3>Perc. Gan. (45%): $ {gan.toFixed(2)} </H3>
-            <H3>Total ARS: $ {final.toFixed(2)}</H3>
-            <Button onClick={reset}>
-              Reset <IconBroom />
-            </Button>
-          </>
-        )}
       </InputContainer>
+      {op && (
+        <>
+          <H3>Valor sin impuestos: $ {convert.toFixed(2)} </H3>
+          <H3>Imp. Pais (30%): $ {imp.toFixed(2)} </H3>
+          <H3>Perc. Gan. (45%): $ {gan.toFixed(2)} </H3>
+          <H3>Total ARS: $ {final.toFixed(2)}</H3>
+          <Button onClick={reset}>
+            Reset <IconBroom />
+          </Button>
+        </>
+      )}
     </MainContainer>
   );
 };
