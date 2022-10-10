@@ -44,7 +44,7 @@ const Header = () => {
     <>
       <HeaderContainer>
         <Menu onClick={handdlerToggle} />
-        <Link to={`home`}>
+        <Link to={`/`}>
           <h2>Dolar Hoy</h2>
         </Link>
 

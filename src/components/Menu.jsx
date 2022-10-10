@@ -50,7 +50,7 @@ const Menu = () => {
   return (
     <MenuBackground show={hidden}>
       <MenuContainer show={hidden}>
-        <Link to={`home`} onClick={handdlerToggle}>
+        <Link to={`/`} onClick={handdlerToggle}>
           <h2>HOME</h2>
         </Link>
         <Link to={`convertidor`} onClick={handdlerToggle}>

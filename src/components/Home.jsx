@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { dolar } from "./Main";
 
 const HomeContainer = styled.div`
   width: 70%;
@@ -17,15 +18,7 @@ const HomeContainer = styled.div`
     width: 90%;
   } ;
 `;
-const H1 = styled.h1`
-  margin-bottom: 3rem;
-  font-size: 3rem;
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 0.4rem;
-  } ;
-`;
+
 const H2 = styled.h2`
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -45,9 +38,17 @@ const H3 = styled.h3`
     margin-bottom: 0.4rem;
   } ;
 `;
+//.replace(/,/, ".");
 
+let dolares = [];
+
+fetch(dolar)
+  .then((response) => response.json())
+  .then((dolar) => dolares.push(dolar));
+
+console.log(dolares);
 const Home = () => {
-  return <HomeContainer>Covert</HomeContainer>;
+  return <HomeContainer></HomeContainer>;
 };
 
 export default Home;
