@@ -21,6 +21,22 @@ const HomeContainer = styled.div`
   } ;
 `;
 
+const Num = styled.h3`
+  font-family: "Inter";
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    //text-align: center;
+    margin-top: 0.1rem;
+    margin-bottom: 0.4rem;
+  } ;
+`;
+
 const H3 = styled.h3`
   font-size: 2rem;
   font-weight: 900;
@@ -85,9 +101,14 @@ const Home = () => {
       {dolarHoy.map((item) => (
         <>
           <DataContainer>
-            <H3>Dolar Oficial: $ {item[0].casa.venta}</H3>
-            <H3>Dolar Blue: $ {item[1].casa.venta}</H3>
-            <H3>Contado con Liqui: $ {item[3].casa.venta}</H3>
+            <H3>Dolar Oficial:</H3>
+            <Num>$ {item[0].casa.venta}</Num>
+
+            <H3>Dolar Blue: </H3>
+            <Num>$ {item[1].casa.venta}</Num>
+
+            <H3>Contado con Liqui:</H3>
+            <Num>$ {item[3].casa.venta}</Num>
           </DataContainer>
 
           <ImgHome />
