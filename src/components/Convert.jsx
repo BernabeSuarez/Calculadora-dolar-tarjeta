@@ -133,6 +133,11 @@ const Convert = () => {
     setCalc("");
   };
 
+  if (calc < 0) {
+    alert("Ingrese un Numero Valido 😡");
+    setCalc("");
+  }
+
   return (
     <ConvertContainer>
       <ButtonContainer>

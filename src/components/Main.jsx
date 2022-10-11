@@ -163,7 +163,7 @@ const Main = () => {
   };
 
   if (calc < 0) {
-    alert("Ingrese un Numero Valido");
+    alert("Ingrese un Numero Valido 😡");
     setCalc("");
   }
 
