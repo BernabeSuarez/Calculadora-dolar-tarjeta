@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Outlet } from "react-router-dom"; //renderiza las paginas del react-router V 6.4.2
 import Header from "./Header";
 import Menu from "./Menu";
+import Footer from "./Footer";
 
 const RootContainer = styled.div`
   width: 100%;
@@ -17,6 +18,7 @@ const RootLayout = () => {
       <Header />
       <Menu />
       <Outlet />
+      <Footer />
     </RootContainer>
   );
 };
