@@ -15,6 +15,10 @@ const ConvertContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 15px;
   box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
+  & h4 {
+    margin-top: 15px;
+  }
+
   @media (max-width: 768px) {
     width: 90%;
   } ;
@@ -140,6 +144,7 @@ const Convert = () => {
 
   return (
     <ConvertContainer>
+      <h4>Convertidor de Dolar a Pesos - Pesos A Dolar</h4>
       <ButtonContainer>
         <Button onClick={monedaUsd}>
           <Flag>
