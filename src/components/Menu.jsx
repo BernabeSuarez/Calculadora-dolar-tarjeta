@@ -45,17 +45,29 @@ const HomeIcon = styled(BsFillHouseFill)`
   width: 45px;
   height: 45px;
   color: black;
+  &:hover {
+    transform: scale(1.1);
+    color: #383838;
+  }
 `;
 
 const CalcIcon = styled(BsCalculatorFill)`
   width: 45px;
   height: 45px;
   color: black;
+  &:hover {
+    transform: scale(1.1);
+    color: #383838;
+  }
 `;
 const ConvIcon = styled(SiConvertio)`
   width: 45px;
   height: 45px;
   color: black;
+  &:hover {
+    transform: scale(1.1);
+    color: #383838;
+  }
 `;
 
 const Menu = () => {

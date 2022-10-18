@@ -18,7 +18,9 @@ const HomeContainer = styled.div`
   border-radius: 15px;
   box-shadow: 10px 10px 14px 0px rgba(0, 0, 0, 0.75);
   @media (max-width: 768px) {
-    width: 90%;
+    width: 100%;
+    margin-top: 0px;
+    border-radius: 0 0 20px 20px;
   } ;
 `;
 

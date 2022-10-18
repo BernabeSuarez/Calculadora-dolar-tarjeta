@@ -17,7 +17,7 @@ const HeaderContainer = styled.div`
   z-index: 999;
   & a {
     text-decoration: none;
-    color: white;
+    color: green;
     font-size: 1.3rem;
   }
 `;
@@ -33,6 +33,13 @@ const Menu = styled(BsMenuButtonWide)`
   height: 35px;
   cursor: pointer;
 `;
+const H2 = styled.h2`
+  font-family: "Bangers";
+  letter-spacing: 0.1rem;
+  &:hover {
+    color: #50df50;
+  }
+`;
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -45,7 +52,7 @@ const Header = () => {
       <HeaderContainer>
         <Menu onClick={handdlerToggle} />
         <Link to={`/`}>
-          <h2>Dolar Hoy</h2>
+          <H2>Dolar Hoy</H2>
         </Link>
 
         <Icon />

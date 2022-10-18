@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -12,6 +11,9 @@ const FooterContainer = styled.div`
   backdrop-filter: blur(5px);
   & a {
     text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    z-index: -1;
   }
 `;
 
