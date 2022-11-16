@@ -106,6 +106,16 @@ const ButtonMain = styled(Button)`
   justify-content: center;
 `;
 
+const BtnContain = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & h3 {
+    margin: auto;
+  }
+`;
+
 const Convert = () => {
   const dolarHoy = useSelector((state) => state.dolar.dolares[0][0].casa.venta);
   let dolarOficial = dolarHoy;
@@ -146,24 +156,30 @@ const Convert = () => {
     <ConvertContainer>
       <h4>Convertidor de Dolar a Pesos - Pesos A Dolar</h4>
       <ButtonContainer>
-        <Button onClick={monedaUsd}>
-          <Flag>
-            <img src="img/Usa.jpg" alt="" />
-          </Flag>
-          <Arrow />
-          <Flag>
-            <img src="img/Arg.jpg" alt="" />
-          </Flag>
-        </Button>
-        <Button onClick={monedaArs}>
-          <Flag>
-            <img src="img/Arg.jpg" alt="" />
-          </Flag>
-          <Arrow />
-          <Flag>
-            <img src="img/Usa.jpg" alt="" />
-          </Flag>
-        </Button>
+        <BtnContain>
+          <Button onClick={monedaUsd}>
+            <Flag>
+              <img src="img/Usa.jpg" alt="" />
+            </Flag>
+            <Arrow />
+            <Flag>
+              <img src="img/Arg.jpg" alt="" />
+            </Flag>
+          </Button>
+          <h3>Dolar a Pesos</h3>
+        </BtnContain>
+        <BtnContain>
+          <Button onClick={monedaArs}>
+            <Flag>
+              <img src="img/Arg.jpg" alt="" />
+            </Flag>
+            <Arrow />
+            <Flag>
+              <img src="img/Usa.jpg" alt="" />
+            </Flag>
+          </Button>
+          <h3>Pesos a Dolar</h3>
+        </BtnContain>
       </ButtonContainer>
 
       {moneda ? (
